@@ -1,11 +1,11 @@
-package jp.pinkikki
+package jp.pinkikki.redis
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class MonsterMultiplayApplication
+class RedisApplication
 
 fun main(args: Array<String>) {
-    runApplication<MonsterMultiplayApplication>(*args)
+    runApplication<RedisApplication>(*args)
 }

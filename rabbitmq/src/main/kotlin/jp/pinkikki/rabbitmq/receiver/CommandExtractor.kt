@@ -1,7 +1,6 @@
-package jp.pinkikki.receiver
+package jp.pinkikki.rabbitmq.receiver
 
 import org.springframework.stereotype.Component
-import reactor.core.publisher.Flux
 
 @Component
 class CommandExtractor {

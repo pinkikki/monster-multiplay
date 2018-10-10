@@ -1,4 +1,4 @@
-package jp.pinkikki.sender
+package jp.pinkikki.rabbitmq.sender
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.http.ResponseEntity
@@ -13,7 +13,7 @@ class SendController(private val rabbitTemplate: RabbitTemplate) {
     @GetMapping("/send/{command}")
     fun send(@PathVariable command: String): Mono<ResponseEntity<*>> {
         return Mono.fromCallable {
-            rabbitTemplate.convertAndSend("battle/$command", command)
+            rabbitTemplate.convertAndSend("sample", "battle/$command", command)
             ResponseEntity
                     .accepted()
                     .build<Any>()

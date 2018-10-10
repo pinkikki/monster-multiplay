@@ -1,3 +1,3 @@
 # monster-multiplay
 
-pub / sub with rabbitmq
+pub/sub training 
