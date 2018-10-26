@@ -1,11 +1,14 @@
+
 buildscript {
     ext {
-        kotlinVersion = '1.2.51'
-        springBootVersion = '2.0.5.RELEASE'
+        kotlinVersion = '1.2.71'
+        springBootVersion = '2.1.0.RC1'
     }
-    repositories {
-        mavenCentral()
-    }
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
@@ -37,12 +40,14 @@ compileTestKotlin {
 
 repositories {
     mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
 }
 
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-webflux')
-    implementation('org.springframework.boot:spring-boot-starter-amqp')
+    implementation('org.springframework.boot:spring-boot-starter-data-redis-reactive')
     implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
