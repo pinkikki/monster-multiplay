@@ -2,7 +2,7 @@ version: '3'
 
 services:
   rabbitmq:
-    container_name: rabbitmq
+    container_name: monster-rabbitmq
     image: rabbitmq:3.7.8-management
     ports:
       - '5672:5672'
@@ -11,7 +11,7 @@ services:
       - rabbitmq-data:/var/lib/rabbitmq
 
   redis:
-    container_name: redis
+    container_name: monster-redis
     image: redis
     ports:
     - '6379:6379'
